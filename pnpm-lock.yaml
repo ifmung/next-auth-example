@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@auth/unstorage-adapter':
         specifier: ^2.0.0
-        version: 2.0.0(@simplewebauthn/server@9.0.3)(unstorage@1.10.2(@upstash/redis@1.25.1)(@vercel/kv@1.0.1))
+        version: 2.0.0(@simplewebauthn/server@9.0.3)(unstorage@1.10.2(@vercel/kv@1.0.1))
       '@radix-ui/react-avatar':
         specifier: ^1.0.3
         version: 1.0.4(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -45,8 +45,8 @@ importers:
         specifier: latest
         version: 14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next-auth:
-        specifier: beta
-        version: 5.0.0-beta.17(@simplewebauthn/server@9.0.3)(next@14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+        specifier: 4.24.7
+        version: 4.24.7(next@14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -61,7 +61,7 @@ importers:
         version: 1.0.7(tailwindcss@3.4.3)
       unstorage:
         specifier: ^1.10.1
-        version: 1.10.2(@upstash/redis@1.25.1)(@vercel/kv@1.0.1)
+        version: 1.10.2(@vercel/kv@1.0.1)
     devDependencies:
       '@types/node':
         specifier: ^20.12.8
@@ -802,6 +802,10 @@ packages:
   cookie-es@1.1.0:
     resolution: {integrity: sha512-L2rLOcK0wzWSfSDA33YR+PUHDG10a8px7rUHKWbGLP4YfbsMed2KFUw5fczvDPbT98DDe3LEzviswl810apTEw==}
 
+  cookie@0.5.0:
+    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+    engines: {node: '>= 0.6'}
+
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
@@ -1006,6 +1010,9 @@ packages:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
 
+  jose@4.15.7:
+    resolution: {integrity: sha512-L7ioP+JAuZe8v+T5+zVI9Tx8LtU8BL7NxkyDFVMv+Qr3JW0jSoYDedLtodaXwfqMpeCyx4WXFNyu9tJt4WvC1A==}
+
   jose@5.2.3:
     resolution: {integrity: sha512-KUXdbctm1uHVL8BYhnyHkgp3zDX5KW8ZhAKVFEfUbU2P8Alpzjb+48hHvjOdQIyPshoblhzsuqOwEEAbtHVirA==}
 
@@ -1034,6 +1041,10 @@ packages:
   lru-cache@10.2.0:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
     engines: {node: 14 || >=16.14}
+
+  lru-cache@6.0.0:
+    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
+    engines: {node: '>=10'}
 
   lucide-react@0.274.0:
     resolution: {integrity: sha512-qiWcojRXEwDiSimMX1+arnxha+ROJzZjJaVvCC0rsG6a9pUPjZePXSq7em4ZKMp0NDm1hyzPNkM7UaWC3LU2AA==}
@@ -1083,19 +1094,14 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  next-auth@5.0.0-beta.17:
-    resolution: {integrity: sha512-XA/7JtAjOgDfAeotJPFUsFZGGItZwzZrxLt9Gc9fE7EchLk6zydZfuZ22Vvwixs3IilkN644D5IoD5tEOAFGCQ==}
+  next-auth@4.24.7:
+    resolution: {integrity: sha512-iChjE8ov/1K/z98gdKbn2Jw+2vLgJtVV39X+rCP5SGnVQuco7QOr19FRNGMIrD8d3LYhHWV9j9sKLzq1aDWWQQ==}
     peerDependencies:
-      '@simplewebauthn/browser': ^9.0.1
-      '@simplewebauthn/server': ^9.0.2
-      next: ^14
+      next: ^12.2.5 || ^13 || ^14
       nodemailer: ^6.6.5
-      react: ^18.2.0
+      react: ^17.0.2 || ^18
+      react-dom: ^17.0.2 || ^18
     peerDependenciesMeta:
-      '@simplewebauthn/browser':
-        optional: true
-      '@simplewebauthn/server':
-        optional: true
       nodemailer:
         optional: true
 
@@ -1152,9 +1158,16 @@ packages:
   oauth4webapi@2.10.4:
     resolution: {integrity: sha512-DSoj8QoChzOCQlJkRmYxAJCIpnXFW32R0Uq7avyghIeB6iJq0XAblOD7pcq3mx4WEBDwMuKr0Y1qveCBleG2Xw==}
 
+  oauth@0.9.15:
+    resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==}
+
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
+
+  object-hash@2.2.0:
+    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
+    engines: {node: '>= 6'}
 
   object-hash@3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
@@ -1166,9 +1179,16 @@ packages:
   ohash@1.1.3:
     resolution: {integrity: sha512-zuHHiGTYTA1sYJ/wZN+t5HKZaH23i4yI1HMwbuXm24Nid7Dv0KcuRlKoNKS9UNfAVSBlnGLcuQrnOKWOZoEGaw==}
 
+  oidc-token-hash@5.0.3:
+    resolution: {integrity: sha512-IF4PcGgzAr6XXSff26Sk/+P4KZFJVuHAJZj3wgO3vX2bMdNVp/QXTP3P7CEm9V1IdG8lDLY3HhiqpsE/nOwpPw==}
+    engines: {node: ^10.13.0 || >=12.0.0}
+
   onetime@6.0.0:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
     engines: {node: '>=12'}
+
+  openid-client@5.6.5:
+    resolution: {integrity: sha512-5P4qO9nGJzB5PI0LFlhj4Dzg3m4odt0qsJTfyEtZyOlkgpILwEioOhVVJOrS1iVH494S4Ee5OCjjg6Bf5WOj3w==}
 
   path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
@@ -1537,6 +1557,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -1555,6 +1579,9 @@ packages:
   wrap-ansi@8.1.0:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
+
+  yallist@4.0.0:
+    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
   yaml@2.4.1:
     resolution: {integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==}
@@ -1577,10 +1604,10 @@ snapshots:
     optionalDependencies:
       '@simplewebauthn/server': 9.0.3
 
-  '@auth/unstorage-adapter@2.0.0(@simplewebauthn/server@9.0.3)(unstorage@1.10.2(@upstash/redis@1.25.1)(@vercel/kv@1.0.1))':
+  '@auth/unstorage-adapter@2.0.0(@simplewebauthn/server@9.0.3)(unstorage@1.10.2(@vercel/kv@1.0.1))':
     dependencies:
       '@auth/core': 0.30.0(@simplewebauthn/server@9.0.3)
-      unstorage: 1.10.2(@upstash/redis@1.25.1)(@vercel/kv@1.0.1)
+      unstorage: 1.10.2(@vercel/kv@1.0.1)
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
       - '@simplewebauthn/server'
@@ -2265,6 +2292,8 @@ snapshots:
 
   cookie-es@1.1.0: {}
 
+  cookie@0.5.0: {}
+
   cookie@0.6.0: {}
 
   cross-fetch@4.0.0:
@@ -2448,6 +2477,8 @@ snapshots:
 
   jiti@1.21.0: {}
 
+  jose@4.15.7: {}
+
   jose@5.2.3: {}
 
   js-tokens@4.0.0: {}
@@ -2486,6 +2517,10 @@ snapshots:
       js-tokens: 4.0.0
 
   lru-cache@10.2.0: {}
+
+  lru-cache@6.0.0:
+    dependencies:
+      yallist: 4.0.0
 
   lucide-react@0.274.0(react@18.2.0):
     dependencies:
@@ -2527,13 +2562,20 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  next-auth@5.0.0-beta.17(@simplewebauthn/server@9.0.3)(next@14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
+  next-auth@4.24.7(next@14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@auth/core': 0.30.0(@simplewebauthn/server@9.0.3)
+      '@babel/runtime': 7.24.4
+      '@panva/hkdf': 1.1.1
+      cookie: 0.5.0
+      jose: 4.15.7
       next: 14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      oauth: 0.9.15
+      openid-client: 5.6.5
+      preact: 10.11.3
+      preact-render-to-string: 5.2.3(preact@10.11.3)
       react: 18.2.0
-    optionalDependencies:
-      '@simplewebauthn/server': 9.0.3
+      react-dom: 18.2.0(react@18.2.0)
+      uuid: 8.3.2
 
   next@14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
@@ -2582,7 +2624,11 @@ snapshots:
 
   oauth4webapi@2.10.4: {}
 
+  oauth@0.9.15: {}
+
   object-assign@4.1.1: {}
+
+  object-hash@2.2.0: {}
 
   object-hash@3.0.0: {}
 
@@ -2594,9 +2640,18 @@ snapshots:
 
   ohash@1.1.3: {}
 
+  oidc-token-hash@5.0.3: {}
+
   onetime@6.0.0:
     dependencies:
       mimic-fn: 4.0.0
+
+  openid-client@5.6.5:
+    dependencies:
+      jose: 4.15.7
+      lru-cache: 6.0.0
+      object-hash: 2.2.0
+      oidc-token-hash: 5.0.3
 
   path-key@3.1.1: {}
 
@@ -2873,7 +2928,7 @@ snapshots:
       node-fetch-native: 1.6.4
       pathe: 1.1.2
 
-  unstorage@1.10.2(@upstash/redis@1.25.1)(@vercel/kv@1.0.1):
+  unstorage@1.10.2(@vercel/kv@1.0.1):
     dependencies:
       anymatch: 3.1.3
       chokidar: 3.6.0
@@ -2886,7 +2941,6 @@ snapshots:
       ofetch: 1.3.4
       ufo: 1.5.3
     optionalDependencies:
-      '@upstash/redis': 1.25.1
       '@vercel/kv': 1.0.1
     transitivePeerDependencies:
       - uWebSockets.js
@@ -2922,6 +2976,8 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
+  uuid@8.3.2: {}
+
   webidl-conversions@3.0.1: {}
 
   whatwg-url@5.0.0:
@@ -2944,5 +3000,7 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 5.1.2
       strip-ansi: 7.1.0
+
+  yallist@4.0.0: {}
 
   yaml@2.4.1: {}
