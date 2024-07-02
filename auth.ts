@@ -19,6 +19,7 @@ const storage = createStorage({
 })
 
 const config = {
+  trustHost: true,
   theme: { logo: "https://authjs.dev/img/logo-sm.png" },
   adapter: UnstorageAdapter(storage),
   providers: [GitHub],
