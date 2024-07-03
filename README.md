@@ -23,6 +23,18 @@
    </p>
 </p>
 
+<div align="center">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/08277bdf-d77f-43b2-b77f-169c32148c3a/deploy-status)](https://app.netlify.com/sites/effulgent-bonbon-bfc191/deploys)
+
+  <br/>
+
+  <a href="https://effulgent-bonbon-bfc191.netlify.app">
+    Live demo
+  </a>
+
+</div>
+
 ## Overview
 
 NextAuth.js is a complete open source authentication solution.
